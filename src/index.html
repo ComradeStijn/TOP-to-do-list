@@ -9,7 +9,7 @@
   <main id="body-container">
     <header>
       <nav>
-        <button>Refresh Todos</button>
+        <button id="refresh-todos">Refresh Todos</button>
         <button id="create-todos">Create Todos</button>
         <select name="view-form" id="view-form">
           <option value="default">Default</option>
@@ -42,8 +42,30 @@
       </form>
     </header>
 
-
-
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Priority</th>
+            <th>Done?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>21/23/23</td>
+            <td>low</td>
+            <td>
+              <input type="checkbox" name="done" id="done">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
   </main>
 </body>
 </html>

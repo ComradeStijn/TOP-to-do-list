@@ -17,6 +17,10 @@ body {
     background-color: var(--third);
 }
 
+header {
+    margin-bottom: 2rem;
+}
+
 #body-container {
     background-color: white;
     padding: 2rem;
@@ -67,13 +71,27 @@ form {
         input, select {
             flex: 2;
         }
-
     }
 
     button {
         align-self:flex-start;
     }
 }
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+    td, th {
+        border: 1px solid black;
+        text-align: center;
+    }
+}
+
+
+
+
 
 
 .hidden {

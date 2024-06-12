@@ -5,6 +5,7 @@ export class Todo {
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
+        this.doneStatus = false;
         project.addTodo(this);
     }
 
