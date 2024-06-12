@@ -82,14 +82,35 @@ form {
 table {
     border-collapse: collapse;
     width: 100%;
+    margin-bottom: 2rem;
 
     td, th {
-        border: 1px solid black;
         text-align: center;
+    }
+    th {
+        background-color: var(--fifth);
+        padding: 0.5rem;
+    }
+    th:nth-child(1) {
+        border-top-left-radius: 10px;
+    }
+    th:last-child {
+        border-top-right-radius: 10px;
+    }
+    tr:last-child td:nth-child(1) {
+        border-bottom-left-radius: 10px;
+    }
+    tr:last-child th:last-child {
+        border-bottom-right-radius: 10px;
+    }
+    tbody tr:nth-child(2n) {
+        background-color: var(--third);
     }
 }
 
-
+#table-container {
+    overflow-x: auto;
+}
 
 
 

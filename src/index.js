@@ -5,7 +5,8 @@ import { Project, Todo } from './js/todos';
 document.addEventListener('DOMContentLoaded', () => {
 	const projectList = {};
 	projectList['default'] = new Project('default');
-
+	projectList['alternative'] = new Project('alternative');
+	renderProjects(projectList);
 
 	document.querySelector('#create-todos').addEventListener('click', (e) => toggleForm(e));
 	document.querySelector('#form').addEventListener('submit', (e) => {
@@ -13,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		refreshForms(e, projectList)
 	});
 	document.querySelector('#refresh-todos').addEventListener('click', (e) => refreshForms(e, projectList));
+	document.querySelector('#view-form').addEventListener('change', (e) => {
+		refreshForms(e, projectList);
+	})
 })
 
 
@@ -20,6 +24,17 @@ function toggleForm(e) {
 	document.querySelector('#form').classList.toggle('hidden');
 }
 
+function renderProjects(projectList) {
+	// <option value="default">Default</option>
+	const selectEle = document.querySelector('#view-form');
+
+	for (const index in projectList) {
+		const optionEle = document.createElement('option');
+		optionEle.setAttribute('value', index);
+		optionEle.textContent = index;
+		selectEle.append(optionEle);
+	}
+}
 
 function formSubmit(e, projectList) {
 	e.preventDefault();
