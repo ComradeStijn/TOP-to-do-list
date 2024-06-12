@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	projectList['default'] = new Project('default');
 
 
-
-
 	document.querySelector('#create-todos').addEventListener('click', (e) => toggleForm(e));
 	document.querySelector('#form').addEventListener('submit', (e) => {
 		formSubmit(e, projectList);
@@ -44,6 +42,8 @@ function refreshForms(e, projectList) {
 	const tbodyElement = document.querySelector('tbody');
 	const todoArray = project.items;
 
+	tbodyElement.innerHTML = '';
+
 	for (const todo of todoArray) {
 		const trElem = document.createElement('tr');
 		const title = document.createElement('td');
@@ -59,11 +59,20 @@ function refreshForms(e, projectList) {
 
 		const checkbox = document.createElement('input');
 		checkbox.setAttribute('type', 'checkbox');
+		checkbox.checked = todo.checkCompletion();
 		done.append(checkbox);
 
 		trElem.append(title, description, dueDate, priority, done);
 		tbodyElement.append(trElem);
+
+		checkbox.addEventListener('change', (e) => checkForm(e, todo));
 	}
 }
 
 
+function checkForm(e, todo) {
+	const checkbox = e.target;
+	const parentTR = checkbox.closest('tr');
+	const title = parentTR.querySelector('td').textContent;
+	todo.toggleCompletion();	
+}

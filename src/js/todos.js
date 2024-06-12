@@ -5,7 +5,6 @@ export class Todo {
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
-        this.doneStatus = false;
         project.addTodo(this);
     }
 
@@ -26,6 +25,10 @@ export class Todo {
             this.#completed = true;
             return true;
         }
+    }
+
+    checkCompletion() {
+        return this.#completed;
     }
 }
 
