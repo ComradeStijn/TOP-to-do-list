@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+</head>
+<body>
+  <main id="body-container">
+    <header>
+      <nav>
+        <button>Refresh Todos</button>
+        <button id="create-todos">Create Todos</button>
+        <select name="view-form" id="view-form">
+          <option value="default">Default</option>
+        </select>
+      </nav>
+
+      <form action="#" id="form" class="hidden">
+        <h3>Create New Todo</h3>
+        <div class="form-group">
+          <label for="title">Title: </label>
+          <input type="text" name="title" id="title" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description: </label>
+          <input type="text" name="description" id="description" required>
+        </div>
+        <div class="form-group">
+          <label for="due-date">Due Date:</label>
+          <input type="date" name="due-date" id="due-date" required>
+        </div>
+        <div class="form-group">
+          <label for="priority">Priority: </label>
+          <select name="priority" id="priority" required>
+            <option value="low" selected>Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <button type="submit">Create</button>
+      </form>
+    </header>
+
+
+
+  </main>
+</body>
+</html>
